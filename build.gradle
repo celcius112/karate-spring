@@ -1,0 +1,30 @@
+plugins {
+  id 'org.springframework.boot' version '2.1.4.RELEASE'
+  id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.karate'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter'
+  implementation 'com.intuit.karate:karate-apache:0.9.2'
+  implementation 'com.intuit.karate:karate-junit5:0.9.2'
+  implementation 'org.junit.platform:junit-platform-launcher:1.4.0'
+  implementation 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+sourceSets {
+  main {
+    java {
+      resources.srcDir file('src/main/java')
+    }
+  }
+}
